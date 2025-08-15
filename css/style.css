@@ -787,3 +787,101 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* ========================================= */
+/* --- All Mobile Responsive Styles --- */
+/* ========================================= */
+@media (max-width: 768px) {
+
+    /* --- General Adjustments --- */
+    .container {
+        padding: 0 1rem; /* Reduces side padding on mobile */
+    }
+
+    h1 {
+        font-size: 2.2rem; /* Makes main titles smaller */
+    }
+
+    .section-title {
+        font-size: 2rem; /* Makes section titles smaller */
+    }
+
+
+    /* --- Navigation Bar --- */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 65px;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-item {
+        padding: 1rem 0;
+    }
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+    /* --- Page Specific Grids --- */
+    .feature-grid,
+    .philosophy-grid,
+    .courses-grid,
+    .testimonial-grid,
+    .course-details-grid,
+    .contact-grid,
+    .results-grid { /* Catches any old grid class */
+        grid-template-columns: 1fr; /* Stacks grids to a single column */
+    }
+
+    .about-flex {
+        flex-direction: column;
+    }
+
+    .about-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+
+    /* --- FIX FOR RESULTS PAGE --- */
+    .achievers-gallery,
+    .reviews-gallery {
+        padding: 2rem 1rem; /* Reduces top/bottom padding */
+    }
+
+    .photo-grid,
+    .reviews-grid {
+        grid-template-columns: 1fr; /* Stacks photos and reviews to a single column */
+    }
+
+    .achiever-card img {
+        height: 350px; /* Reduces image height on mobile for better proportions */
+    }
+
+
+    /* --- Homepage Slider --- */
+    .slider-container {
+        width: 90vw; /* Makes slider take up 90% of the screen width */
+        height: 80vw; /* Adjusts height proportionally */
+        max-width: 300px; /* Prevents it from getting too big */
+        max-height: 250px;
+    }
+
+}
+
